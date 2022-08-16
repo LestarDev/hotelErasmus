@@ -1,0 +1,22 @@
+<div class="wrapper-booking-room" *ngIf="isCardActive">
+    <div class="wrapper-booking-room-left">
+        <input (click)="changeType()" type="{{typeInput}}" placeholder="arrive date" #input1 class="wrapper-booking-room-left-input" >
+        <input (click)="changeType()" type="{{typeInput}}"  #input2 class="wrapper-booking-room-left-input" placeholder="departues date">
+    </div>
+    <div class="wrapper-booking-room-right">
+        <div class="wrapper-booking-room-right-select">
+            <img class="wrapper-booking-room-right-img" src="../../../assets/imgs/guest.png" alt="">
+            <app-guest-option class="wrapper-booking-room-right-select" (changePrice)="getCurrentPrice($event)"></app-guest-option>
+        </div>
+        <span class="wrapper-booking-room-right-text">price: {{PriceOfCard}}€</span>
+    </div>
+    <span [ngClass]="isDataOkay ? 'wrapper-booking-room-important-true':'wrapper-booking-room-important'">enter the data correctly</span>
+    <div *ngIf="isActiveAddButton" (click)="checkData(input1.value, input2.value)" class="wrapper-booking-room-addbtn">
+        <img class="wrapper-booking-room-addbtn-plus" src="../../../assets/imgs/addIcon.png" alt="plus"> 
+        <span>add room</span>
+    </div>
+    <div *ngIf="!isActiveAddButton" (click)="deleteRoom()" class="wrapper-booking-room-addbtn">
+        <img class="wrapper-booking-room-addbtn-plus" src="../../../assets/imgs/addIcon.png" alt="plus"> 
+        <span>delete room</span>
+    </div>
+</div>

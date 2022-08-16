@@ -1,0 +1,9 @@
+<nav [ngClass]="isScroll==false ? 'wrapper-menu':'wrapper-menu wrapper-menu-changed'">
+    <app-logo [heightLogo]="40"></app-logo>
+    <div (click)="onChange()" class="wrapper-menu-click">
+        <div [ngClass]="isBtnClicked == true ? 'wrapper-menu-click-burger' : 'wrapper-menu-click-burger-disactive'"  ></div>
+    </div>
+    <ul [ngClass]="isBtnClicked == true ? 'wrapper-menu-list' : 'wrapper-menu-list wrapper-menu-list-active' ">
+     <app-list-element (click)="onClick()" [listName]="contentOfList" *ngFor="let contentOfList of contentOfListElementArray" ></app-list-element>
+    </ul>
+</nav>

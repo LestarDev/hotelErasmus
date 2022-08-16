@@ -1,0 +1,4 @@
+<div class="container">
+  <app-loading-animation *ngIf="showLoader"></app-loading-animation>
+  <router-outlet (activate)="onActive()"></router-outlet>
+</div>

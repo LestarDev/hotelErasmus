@@ -1,0 +1,14 @@
+<article class="wrapper-booking">
+    <app-menu></app-menu>
+    <app-title class="wrapper-booking-title" [size]="65" [content]="'Booking'"></app-title>
+    <div class="wrapper-booking-price">
+        <span>price: {{PriceOfCard}}€</span>
+    </div>
+    <article class="wrapper-booking-container">
+        <app-booking-card 
+            *ngFor="let number of arrayOfNumbers" 
+            (canICreateNewBookingCard)="createNewCard($event)" 
+            (newItemEvent)="outputFunction($event)"
+        ></app-booking-card>
+    </article>
+</article>

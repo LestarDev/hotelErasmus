@@ -1,0 +1,36 @@
+.title-background {
+    background-color: rgb(239, 237, 235);
+}
+
+.subtitle {
+    padding: 2.4rem;
+    font-family: Italiana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgb(141, 140, 140);
+}
+
+.direction-right{
+    margin-left: 20%;
+    .subtitle{
+        position: relative;
+        right: 25%;;
+    }
+}
+
+.direction-left{
+    margin-right: 20%;
+    .subtitle{
+        position: relative;
+        left: 20%;
+        text-align: right;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .direction-right{
+        .subtitle{
+            right: 15%;;
+        }
+    }
+}

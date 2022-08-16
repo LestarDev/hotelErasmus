@@ -1,0 +1,13 @@
+<div class="wrapper-scroll-box" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+    <div class="wrapper-scroll-box-hide-start">
+        <div class="wrapper-scroll-box-hide-start-element" *ngFor="let item of tabStart">{{item.content}}</div>
+    </div>
+
+    <div class="wrapper-scroll-box-show {{current.class}}" (touchend)="isTouched($event)" (animationend)="clearClass($event)">
+        {{current.content}}
+    </div>
+
+    <div class="wrapper-scroll-box-hide-end">
+        <div class="wrapper-scroll-box-hide-end-element" *ngFor="let item of tabEnd">{{item.content}}</div>
+    </div>
+</div>

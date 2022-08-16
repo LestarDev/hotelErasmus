@@ -1,0 +1,4 @@
+<select (change)="onChange($event.target)" class="guest-option-select"  name="guestSelect">
+    <option selected disabled hidden>guest</option>
+    <option *ngFor="let room of avaibleRooms" >{{room.name}}</option>
+</select>

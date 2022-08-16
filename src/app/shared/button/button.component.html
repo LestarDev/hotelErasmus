@@ -1,0 +1,8 @@
+<div
+    class="app-button"
+    [style.width.px]="size >= 5 ? size * 16 : 80"
+    [style.backgroundColor]="color"
+    [style.color]="hasLightText ? '#fff' : '#000'"
+    (click)="clickedEvent()">
+    {{content}}
+</div>

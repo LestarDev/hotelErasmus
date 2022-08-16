@@ -1,0 +1,79 @@
+.loading-animation{
+    background: #73A9A2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation: animationEnd .5s linear 1.5s 1 normal backwards;
+    .balls{
+        display: flex;
+        justify-content: space-between;
+        span{
+            display: block;
+            padding: 10px;
+            margin: 0 15px;
+            background: #D9D9D9;
+            border-radius: 10px;
+        }
+    }
+}
+
+$delay: (
+    "1": 0s,
+    "2": 0.1s,
+    "3": 0.2s,
+    "4": 0.3s,
+    "5": 0.4s,
+    "6": 0.5s,
+    "7": 0.6s,
+    "8": 0.7s,
+);
+
+@each $delay, $i in $delay {
+    .loading-animation{
+        .balls{
+            span{
+                &:nth-child(#{$delay}){
+                    animation: ballsJumping .4s linear #{$i} infinite alternate both, ballsDisappearing .4s linear #{$i} infinite alternate both;
+
+                    @media screen and (min-width: 760px) {
+                        animation: ballsJumping .8s linear #{$i} infinite alternate both, ballsDisappearing .8s linear #{$i} infinite alternate both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes ballsJumping{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-150px);
+    }
+}
+
+@keyframes ballsDisappearing{
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes animationEnd{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

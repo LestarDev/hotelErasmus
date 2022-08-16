@@ -1,0 +1,26 @@
+<article class="slider-vertical">
+    <div class="slider-vertical-images">
+        <div class="slider-vertical-image"
+            *ngFor="let image of images"
+            [style.backgroundImage]="'url('+ image.imageSrc + ')'"
+            [id]="'slider-image-' + image.id"
+            [ngClass]="image.isActive ? 'slider-vertical-image--active' : 'slider-vertical-image--disactive'"></div>
+    </div>
+    <div class="slider-vertical-buttons">
+        <div class="slider-vertical-button"
+            *ngFor="let image of images"
+            [ngClass]="image.isActive ? 'slider-vertical-button--active' : 'slider-vertical-button--disactive'"
+            (click)="onButtonClick(image.id)"></div>
+        </div>
+    <div class="slider-vertical-sections">
+        <div class="slider-vertical-section"
+            *ngFor="let image of images">
+            <h3 class="slider-vertical-section-header">{{image.header}}</h3>
+            <p class="slider-vertical-section-content"
+                [style.opacity]="image.isActive ? 1 : 0">{{image.content}}</p>
+        </div>
+    </div>
+    <div class="slider-vertical-placeholder">
+        <div class="slider-vertical-line"></div>
+    </div>
+</article>

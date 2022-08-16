@@ -1,0 +1,18 @@
+<div class="scroll-conteiner" (window:resize)="onResize($event)">
+    
+    <div class="scroll-conteiner-slidder">
+        <app-arrow-to-slider [is_icon_right]="false" (isClicked)="move(false)" [style.width.vw]="6" [style.display]="'flex'" [style.justify-content]="'flex-end'"></app-arrow-to-slider>
+        <app-slider-comments class="scroll-conteiner-slidder-example-viewport" (isTouchedEvent)="setIndex($event)">
+        </app-slider-comments>
+        <app-arrow-to-slider (isClicked)="move(true)" [style.width.vw]="6" [style.display]="'flex'" [style.justify-content]="'center'"></app-arrow-to-slider>
+    </div>
+
+    <div class="scroll-conteiner-navigations">
+    <div class="scroll-conteiner-navigations-piece-navigation" *ngFor="let index of indexs">
+        <div class="scroll-conteiner-navigations-piece-navigation-color-gray" *ngIf="thisIndex==index"></div>
+    </div>
+    </div>
+
+  </div>
+
+  

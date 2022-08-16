@@ -1,0 +1,49 @@
+
+.wrapper-list{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 65px;
+    font-family: 'Italiana', serif;
+    color: #333030;
+    cursor: pointer;
+    &-link{
+        color: #333030;
+        position: fixed;
+        font-family: 'Italiana', serif;
+        text-decoration: none;
+    }
+    &::before{
+        font-size: 100px;
+        display: block;
+        content: attr(data-content);
+        position: fixed;
+        color: #8a8888;
+        margin-right: -7px;
+        margin-top: 10px;
+        font-family: 'Italiana', serif;
+        animation-direction: alternate;
+        animation-name: opacityChangeReverse;
+        animation-duration: 0.5s;
+        opacity: 0;
+    }
+    &:hover{ 
+        &::before{
+        animation-direction: alternate;
+        animation-name: opacityChange;
+        animation-duration: 0.5s;
+        opacity: 0.4;
+    }
+}
+}
+
+@keyframes opacityChange {
+    from {opacity: 0;}
+    to {opacity: 0.4;}
+  }
+  @keyframes opacityChangeReverse {
+    from {opacity: 0.4;}
+    to {opacity: 0;}
+  }
+
